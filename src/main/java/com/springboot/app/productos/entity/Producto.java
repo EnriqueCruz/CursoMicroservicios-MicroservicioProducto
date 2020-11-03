@@ -23,8 +23,8 @@ public class Producto implements Serializable {
 
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	
 	
 	private String nombre;
