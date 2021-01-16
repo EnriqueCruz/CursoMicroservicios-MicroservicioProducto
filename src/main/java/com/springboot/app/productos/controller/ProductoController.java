@@ -31,9 +31,15 @@ public class ProductoController {
 	}
 	
 	@RequestMapping(value = "/producto/{id}", method = RequestMethod.GET)
-	public Producto getProducto(@PathVariable(name = "id") Long id) {
+	public Producto getProducto(@PathVariable(name = "id") Long id)  {
 		Producto producto = productoService.findProductoById(id);
 		producto.setPort(Integer.valueOf(environment.getProperty("local.server.port")));
+//		try {
+//			Thread.sleep(2000L);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}		
 		return producto;
 	}
 
